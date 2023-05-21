@@ -6,18 +6,20 @@ import 'package:fitness_app/models/workout.dart';
 class WorkoutsScreen extends StatelessWidget {
   const WorkoutsScreen({
     super.key,
-    required this.title,
+     this.title,
     required this.workouts,
+    required this.onToggleFavorite,
   });
 
-  final String title;
+  final String? title;
   final List<Workout> workouts;
-  
+  final void Function (Workout workout) onToggleFavorite;
   void selectWorkout(BuildContext context, Workout workout) {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (ctx) => WorkoutDetailsScreen(
           workout: workout,
+          onToggleFavorite: onToggleFavorite,
         ),
       ),
     );
@@ -57,10 +59,12 @@ class WorkoutsScreen extends StatelessWidget {
         );
       
     }
-
+  if(title == null){
+    return content;
+  }
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(title!),
       ),
       body: content,
     );
