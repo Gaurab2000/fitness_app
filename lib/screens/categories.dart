@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
-
+import 'package:fitness_app/models/category.dart';
 import 'package:fitness_app/data/dummy_data.dart';
 import 'package:fitness_app/widgets/category_grid_item.dart';
 import 'package:fitness_app/screens/workouts.dart';
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
-void _selectCategory(BuildContext context) {
+void _selectCategory(BuildContext context, Category category) {
+
+  final filteredWorkouts = dummyWorkouts
+        .where((workout) => workout.categories.contains(category.id))
+        .toList();
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (ctx) => const WorkoutsScreen(
-          title: 'Some title',
-          workouts: [],
+        builder: (ctx) =>  WorkoutsScreen(
+          title: category.title,
+          workouts: filteredWorkouts,
         ),
       ),
     ); // Navigator.push(context, route)
@@ -34,7 +38,7 @@ void _selectCategory(BuildContext context) {
           for (final category in availableCategories)
             CategoryGridItem(category: category,
             onSelectCategory: (){
-              _selectCategory(context);
+              _selectCategory(context,category);
             },
               
             )

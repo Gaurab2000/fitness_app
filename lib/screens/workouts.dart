@@ -1,5 +1,6 @@
+import 'package:fitness_app/widgets/workout_item.dart';
 import 'package:flutter/material.dart';
-
+import 'package:fitness_app/screens/workout_details.dart';
 import 'package:fitness_app/models/workout.dart';
 
 class WorkoutsScreen extends StatelessWidget {
@@ -11,6 +12,17 @@ class WorkoutsScreen extends StatelessWidget {
 
   final String title;
   final List<Workout> workouts;
+  
+  void selectWorkout(BuildContext context, Workout workout) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (ctx) => WorkoutDetailsScreen(
+          workout: workout,
+        ),
+      ),
+    );
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -39,10 +51,11 @@ class WorkoutsScreen extends StatelessWidget {
       content = ListView.builder(
     
         itemCount: workouts.length,
-        itemBuilder: (ctx, index) => Text(
-          workouts[index].title,
-        ),
-      );
+        itemBuilder: (ctx, index) => WorkoutItem(workout: workouts[index],onSelectWorkout: (workout){
+          selectWorkout(context, workout);
+        },)
+        );
+      
     }
 
     return Scaffold(
