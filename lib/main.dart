@@ -1,5 +1,6 @@
 import 'package:fitness_app/data/dummy_data.dart';
 import 'package:fitness_app/screens/categories.dart';
+import 'package:fitness_app/screens/tabs.dart';
 import 'package:fitness_app/screens/workouts.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +26,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: theme,
-      home:  const CategoriesScreen (),
+      home:  const TabsScreen(),
     );
   }
 }

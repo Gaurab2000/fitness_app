@@ -1,27 +1,30 @@
+import 'package:fitness_app/models/workout.dart';
 import 'package:flutter/material.dart';
-
+import 'package:fitness_app/models/category.dart';
 import 'package:fitness_app/data/dummy_data.dart';
 import 'package:fitness_app/widgets/category_grid_item.dart';
 import 'package:fitness_app/screens/workouts.dart';
 class CategoriesScreen extends StatelessWidget {
-  const CategoriesScreen({super.key});
-void _selectCategory(BuildContext context) {
+  const CategoriesScreen({super.key,required this.onToggleFavorite,});
+final void Function(Workout workout) onToggleFavorite;
+void _selectCategory(BuildContext context, Category category,) {
+
+  final filteredWorkouts = dummyWorkouts
+        .where((workout) => workout.categories.contains(category.id))
+        .toList();
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (ctx) => const WorkoutsScreen(
-          title: 'Some title',
-          workouts: [],
+        builder: (ctx) =>  WorkoutsScreen(
+          title: category.title,
+          workouts: filteredWorkouts,
+          onToggleFavorite: onToggleFavorite,
         ),
       ),
     ); // Navigator.push(context, route)
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Pick your category'),
-      ),
-      body: GridView(
+    return  GridView(
         padding: const EdgeInsets.all(24),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
@@ -34,12 +37,12 @@ void _selectCategory(BuildContext context) {
           for (final category in availableCategories)
             CategoryGridItem(category: category,
             onSelectCategory: (){
-              _selectCategory(context);
+              _selectCategory(context,category);
             },
               
             )
         ],
-      ),
+      
     );
   }
 }

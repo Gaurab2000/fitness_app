@@ -1,16 +1,30 @@
+import 'package:fitness_app/widgets/workout_item.dart';
 import 'package:flutter/material.dart';
-
+import 'package:fitness_app/screens/workout_details.dart';
 import 'package:fitness_app/models/workout.dart';
 
 class WorkoutsScreen extends StatelessWidget {
   const WorkoutsScreen({
     super.key,
-    required this.title,
+     this.title,
     required this.workouts,
+    required this.onToggleFavorite,
   });
 
-  final String title;
+  final String? title;
   final List<Workout> workouts;
+  final void Function (Workout workout) onToggleFavorite;
+  void selectWorkout(BuildContext context, Workout workout) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (ctx) => WorkoutDetailsScreen(
+          workout: workout,
+          onToggleFavorite: onToggleFavorite,
+        ),
+      ),
+    );
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -39,15 +53,18 @@ class WorkoutsScreen extends StatelessWidget {
       content = ListView.builder(
     
         itemCount: workouts.length,
-        itemBuilder: (ctx, index) => Text(
-          workouts[index].title,
-        ),
-      );
+        itemBuilder: (ctx, index) => WorkoutItem(workout: workouts[index],onSelectWorkout: (workout){
+          selectWorkout(context, workout);
+        },)
+        );
+      
     }
-
+  if(title == null){
+    return content;
+  }
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(title!),
       ),
       body: content,
     );
