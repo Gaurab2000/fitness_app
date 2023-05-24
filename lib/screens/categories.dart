@@ -5,11 +5,12 @@ import 'package:fitness_app/data/dummy_data.dart';
 import 'package:fitness_app/widgets/category_grid_item.dart';
 import 'package:fitness_app/screens/workouts.dart';
 class CategoriesScreen extends StatelessWidget {
-  const CategoriesScreen({super.key,required this.onToggleFavorite,});
+  const CategoriesScreen({super.key,required this.onToggleFavorite,required this.availableWorkouts,});
 final void Function(Workout workout) onToggleFavorite;
+  final List<Workout> availableWorkouts;
 void _selectCategory(BuildContext context, Category category,) {
 
-  final filteredWorkouts = dummyWorkouts
+  final filteredWorkouts = availableWorkouts
         .where((workout) => workout.categories.contains(category.id))
         .toList();
     Navigator.of(context).push(

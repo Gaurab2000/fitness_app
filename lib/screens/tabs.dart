@@ -1,8 +1,17 @@
+import 'package:fitness_app/data/dummy_data.dart';
+import 'package:fitness_app/screens/filters.dart';
+import 'package:fitness_app/widgets/main_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:fitness_app/models/workout.dart';
 import 'package:fitness_app/screens/categories.dart';
 import 'package:fitness_app/screens/workouts.dart';
 
+const kInitialFilters = {
+  Filter.glutenFree: false,
+  Filter.lactoseFree: false,
+  Filter.vegetarian: false,
+  Filter.vegan: false
+};
 class TabsScreen extends StatefulWidget {
   const TabsScreen({super.key});
 
@@ -15,16 +24,29 @@ class TabsScreen extends StatefulWidget {
 class _TabsScreenState extends State<TabsScreen> {
   int _selectedPageIndex = 0;
   final List<Workout> _favoriteWorkouts = [];
-
+  Map<Filter, bool> _selectedFilters = kInitialFilters;
+   void _showInfoMessage(String message) {
+    ScaffoldMessenger.of(context).clearSnackBars();
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+      ),
+    );
+  }
   void _toggleWorkoutFavoriteStatus(Workout workout) {
     final isExisting = _favoriteWorkouts.contains(workout);
 
     if (isExisting) {
-      _favoriteWorkouts.remove(workout);
+      setState(() {
+        _favoriteWorkouts.remove(workout);
+      });
+      _showInfoMessage('Meal is no longer a favorite.');
     } else {
-      _favoriteWorkouts.add(workout);
-    }
-  }
+
+   setState(() {
+     _favoriteWorkouts.add(workout);
+     _showInfoMessage('Marked as a favorite!');
+   });}}
 
   
   void _selectPage(int index) {
@@ -32,20 +54,59 @@ class _TabsScreenState extends State<TabsScreen> {
       _selectedPageIndex = index;
     });
   }
+ void _setScreen(String identifier) async {
+    Navigator.of(context).pop();
+    if (identifier == 'filters') {
+  
+      final result = await Navigator.of(context).push<Map<Filter,bool>>(
+        MaterialPageRoute(
+          builder: (ctx) =>  FiltersScreen(
+            currentFilters: _selectedFilters,
+          ),
+        ),
+      );
 
+    setState(() {
+        _selectedFilters = result ?? kInitialFilters;
+      });
+    }
+  }
   @override
   Widget build(BuildContext context) {
-    Widget activePage =  CategoriesScreen(onToggleFavorite:_toggleWorkoutFavoriteStatus,);
+    
+    final availableWorkouts = dummyWorkouts.where((meal) {
+      if (_selectedFilters[Filter.glutenFree]! && !meal.isGlutenFree) {
+        return false;
+      }
+      if (_selectedFilters[Filter.lactoseFree]! && !meal.isLactoseFree) {
+        return false;
+      }
+      if (_selectedFilters[Filter.vegetarian]! && !meal.isVegetarian) {
+        return false;
+      }
+      if (_selectedFilters[Filter.vegan]! && !meal.isVegan) {
+        return false;
+      }
+      return true;
+    }).toList();
+    Widget activePage =  CategoriesScreen(onToggleFavorite:_toggleWorkoutFavoriteStatus,
+    availableWorkouts: availableWorkouts,
+    );
     var activePageTitle = 'Categories';
 
     if (_selectedPageIndex == 1) {
-      activePage =  WorkoutsScreen(workouts: [],onToggleFavorite:_toggleWorkoutFavoriteStatus,);
+      activePage =  WorkoutsScreen(
+        workouts:_favoriteWorkouts,
+        onToggleFavorite:_toggleWorkoutFavoriteStatus,);
       activePageTitle = 'Your Favorites';
     }
 
     return Scaffold(
       appBar: AppBar(
         title: Text(activePageTitle),
+      ),
+      drawer: MainDrawer(
+        onSelectScreen: _setScreen,
       ),
       body: activePage,
       bottomNavigationBar: BottomNavigationBar(
