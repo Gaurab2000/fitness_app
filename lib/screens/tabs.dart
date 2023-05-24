@@ -1,3 +1,5 @@
+import 'package:fitness_app/screens/filters.dart';
+import 'package:fitness_app/widgets/main_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:fitness_app/models/workout.dart';
 import 'package:fitness_app/screens/categories.dart';
@@ -15,16 +17,28 @@ class TabsScreen extends StatefulWidget {
 class _TabsScreenState extends State<TabsScreen> {
   int _selectedPageIndex = 0;
   final List<Workout> _favoriteWorkouts = [];
-
+   void _showInfoMessage(String message) {
+    ScaffoldMessenger.of(context).clearSnackBars();
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+      ),
+    );
+  }
   void _toggleWorkoutFavoriteStatus(Workout workout) {
     final isExisting = _favoriteWorkouts.contains(workout);
 
     if (isExisting) {
-      _favoriteWorkouts.remove(workout);
+      setState(() {
+        _favoriteWorkouts.remove(workout);
+      });
+      _showInfoMessage('Meal is no longer a favorite.');
     } else {
-      _favoriteWorkouts.add(workout);
-    }
-  }
+
+   setState(() {
+     _favoriteWorkouts.add(workout);
+     _showInfoMessage('Marked as a favorite!');
+   });}}
 
   
   void _selectPage(int index) {
@@ -32,20 +46,34 @@ class _TabsScreenState extends State<TabsScreen> {
       _selectedPageIndex = index;
     });
   }
-
+ void _setScreen(String identifier) {
+    Navigator.of(context).pop();
+    if (identifier == 'filters') {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (ctx) => const FiltersScreen(),
+        ),
+      );
+    }
+  }
   @override
   Widget build(BuildContext context) {
     Widget activePage =  CategoriesScreen(onToggleFavorite:_toggleWorkoutFavoriteStatus,);
     var activePageTitle = 'Categories';
 
     if (_selectedPageIndex == 1) {
-      activePage =  WorkoutsScreen(workouts: [],onToggleFavorite:_toggleWorkoutFavoriteStatus,);
+      activePage =  WorkoutsScreen(
+        workouts:_favoriteWorkouts,
+        onToggleFavorite:_toggleWorkoutFavoriteStatus,);
       activePageTitle = 'Your Favorites';
     }
 
     return Scaffold(
       appBar: AppBar(
         title: Text(activePageTitle),
+      ),
+      drawer: MainDrawer(
+        onSelectScreen: _setScreen,
       ),
       body: activePage,
       bottomNavigationBar: BottomNavigationBar(
