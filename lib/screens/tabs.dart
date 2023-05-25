@@ -1,27 +1,29 @@
 import 'package:fitness_app/data/dummy_data.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fitness_app/screens/filters.dart';
 import 'package:fitness_app/widgets/main_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:fitness_app/models/workout.dart';
 import 'package:fitness_app/screens/categories.dart';
 import 'package:fitness_app/screens/workouts.dart';
-
+import 'package:fitness_app/providers/workouts_provider.dart';
+import 'package:fitness_app/providers/favorites_provider.dart';
 const kInitialFilters = {
   Filter.glutenFree: false,
   Filter.lactoseFree: false,
   Filter.vegetarian: false,
   Filter.vegan: false
 };
-class TabsScreen extends StatefulWidget {
+class TabsScreen extends ConsumerStatefulWidget {
   const TabsScreen({super.key});
 
   @override
-  State<TabsScreen> createState() {
+  ConsumerState<TabsScreen> createState() {
     return _TabsScreenState();
   }
 }
 
-class _TabsScreenState extends State<TabsScreen> {
+class _TabsScreenState extends ConsumerState<TabsScreen> {
   int _selectedPageIndex = 0;
   final List<Workout> _favoriteWorkouts = [];
   Map<Filter, bool> _selectedFilters = kInitialFilters;
@@ -73,8 +75,8 @@ class _TabsScreenState extends State<TabsScreen> {
   }
   @override
   Widget build(BuildContext context) {
-    
-    final availableWorkouts = dummyWorkouts.where((meal) {
+    final workouts = ref.watch(workoutsProvider);
+    final availableWorkouts = workouts.where((meal) {
       if (_selectedFilters[Filter.glutenFree]! && !meal.isGlutenFree) {
         return false;
       }
