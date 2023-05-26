@@ -8,18 +8,18 @@ class WorkoutsScreen extends StatelessWidget {
     super.key,
      this.title,
     required this.workouts,
-    required this.onToggleFavorite,
+   
   });
 
   final String? title;
   final List<Workout> workouts;
-  final void Function (Workout workout) onToggleFavorite;
+
   void selectWorkout(BuildContext context, Workout workout) {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (ctx) => WorkoutDetailsScreen(
           workout: workout,
-          onToggleFavorite: onToggleFavorite,
+     
         ),
       ),
     );

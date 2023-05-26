@@ -5,7 +5,7 @@ import 'package:fitness_app/models/workout.dart';
 class FavoriteWorkoutsNotifier extends StateNotifier<List<Workout>> {
   FavoriteWorkoutsNotifier() : super([]);
 
-  bool toggleMealFavoriteStatus(Workout workout) {
+  bool toggleWorkoutFavoriteStatus(Workout workout) {
     final workoutIsFavorite = state.contains(workout);
 
     if (workoutIsFavorite) {

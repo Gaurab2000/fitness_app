@@ -1,20 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:fitness_app/models/workout.dart';
-
-class WorkoutDetailsScreen extends StatelessWidget {
-  const WorkoutDetailsScreen({super.key, required this.workout,required this.onToggleFavorite,});
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:fitness_app/providers/favorites_provider.dart';
+class WorkoutDetailsScreen extends ConsumerWidget {
+  const WorkoutDetailsScreen({super.key, required this.workout,});
 
   final Workout workout;
-    final void Function(Workout workout) onToggleFavorite;
+    
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
         appBar: AppBar(
           title: Text(workout.title),
           actions: [
             IconButton(
               onPressed: () {
-                onToggleFavorite(workout);
+                final wasAdded = 
+                ref.read(favoriteWorkoutsProvider.notifier).toggleWorkoutFavoriteStatus(workout);
+                 ScaffoldMessenger.of(context).clearSnackBars();
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(wasAdded ? 'Workout added as a favourite.' : 'Workout removed'),
+      ),
+    );
               },
               icon: const Icon(Icons.star),
             ),

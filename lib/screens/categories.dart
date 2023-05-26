@@ -5,8 +5,8 @@ import 'package:fitness_app/data/dummy_data.dart';
 import 'package:fitness_app/widgets/category_grid_item.dart';
 import 'package:fitness_app/screens/workouts.dart';
 class CategoriesScreen extends StatelessWidget {
-  const CategoriesScreen({super.key,required this.onToggleFavorite,required this.availableWorkouts,});
-final void Function(Workout workout) onToggleFavorite;
+  const CategoriesScreen({super.key,required this.availableWorkouts,});
+
   final List<Workout> availableWorkouts;
 void _selectCategory(BuildContext context, Category category,) {
 
@@ -18,7 +18,7 @@ void _selectCategory(BuildContext context, Category category,) {
         builder: (ctx) =>  WorkoutsScreen(
           title: category.title,
           workouts: filteredWorkouts,
-          onToggleFavorite: onToggleFavorite,
+        
         ),
       ),
     ); // Navigator.push(context, route)
