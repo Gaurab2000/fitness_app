@@ -6,7 +6,7 @@ import 'package:fitness_app/screens/categories.dart';
 import 'package:fitness_app/screens/filters.dart';
 import 'package:fitness_app/screens/workouts.dart';
 import 'package:fitness_app/widgets/main_drawer.dart';
-import 'package:fitness_app/providers/workouts_provider.dart';
+
 import 'package:fitness_app/providers/favorites_provider.dart';
 import 'package:fitness_app/providers/filters_provider.dart';
 
@@ -51,24 +51,8 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final workouts = ref.watch(workoutsProvider);
-    final activeFilters = ref.watch(filtersProvider);
-    final availableWorkouts = workouts.where((workout) {
-      if (activeFilters[Filter.glutenFree]! && !workout.isGlutenFree) {
-        return false;
-      }
-      if (activeFilters[Filter.lactoseFree]! && !workout.isLactoseFree) {
-        return false;
-      }
-      if (activeFilters[Filter.vegetarian]! && !workout.isVegetarian) {
-        return false;
-      }
-      if (activeFilters[Filter.vegan]! && !workout.isVegan) {
-        return false;
-      }
-      return true;
-    }).toList();
 
+    final availableWorkouts = ref.watch(filteredWorkoutsProvider);
     Widget activePage = CategoriesScreen(
       availableWorkouts: availableWorkouts,
     );

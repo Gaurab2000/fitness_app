@@ -4,13 +4,37 @@ import 'package:fitness_app/models/category.dart';
 import 'package:fitness_app/data/dummy_data.dart';
 import 'package:fitness_app/widgets/category_grid_item.dart';
 import 'package:fitness_app/screens/workouts.dart';
-class CategoriesScreen extends StatelessWidget {
+class CategoriesScreen extends StatefulWidget {
   const CategoriesScreen({super.key,required this.availableWorkouts,});
 
   final List<Workout> availableWorkouts;
+
+  @override
+  State<CategoriesScreen> createState() => _CategoriesScreenState();
+}
+
+class _CategoriesScreenState extends State<CategoriesScreen>  with SingleTickerProviderStateMixin{
+
+  late AnimationController _animationController;
+  @override
+  void initState() {
+
+    super.initState();
+    _animationController = AnimationController(vsync: this,
+    duration: const Duration(milliseconds: 300),
+    lowerBound: 0,
+    upperBound: 1);
+    _animationController.forward();
+  }
+
+  @override
+  void dispose() {
+     _animationController.dispose();
+    super.dispose();
+  }
 void _selectCategory(BuildContext context, Category category,) {
 
-  final filteredWorkouts = availableWorkouts
+  final filteredWorkouts = widget.availableWorkouts
         .where((workout) => workout.categories.contains(category.id))
         .toList();
     Navigator.of(context).push(
@@ -23,9 +47,11 @@ void _selectCategory(BuildContext context, Category category,) {
       ),
     ); // Navigator.push(context, route)
   }
+
   @override
   Widget build(BuildContext context) {
-    return  GridView(
+    return  AnimatedBuilder(animation: _animationController,
+    child:GridView(
         padding: const EdgeInsets.all(24),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
@@ -44,6 +70,19 @@ void _selectCategory(BuildContext context, Category category,) {
             )
         ],
       
+    ),
+     builder: (context, child) => SlideTransition(
+        position: Tween(
+          begin: const Offset(0, 0.3),
+          end: const Offset(0, 0),
+        ).animate(
+          CurvedAnimation(
+            parent: _animationController,
+            curve: Curves.easeInOut,
+          ),
+        ),
+        child: child,
+      ),
     );
   }
 }
