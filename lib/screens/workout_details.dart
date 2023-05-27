@@ -9,6 +9,8 @@ class WorkoutDetailsScreen extends ConsumerWidget {
     
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final favoriteWorkouts = ref.watch(favoriteWorkoutsProvider);
+    final isFavorite = favoriteWorkouts.contains(workout);
     return Scaffold(
         appBar: AppBar(
           title: Text(workout.title),
@@ -24,7 +26,7 @@ class WorkoutDetailsScreen extends ConsumerWidget {
       ),
     );
               },
-              icon: const Icon(Icons.star),
+              icon:  Icon(isFavorite ? Icons.star : Icons.star_border),
             ),
           ],
         ),
