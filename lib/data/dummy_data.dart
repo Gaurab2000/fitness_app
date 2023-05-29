@@ -5,56 +5,56 @@ import 'package:fitness_app/models/workout.dart';
 
 // Constants in Dart should be written in lowerCamelcase.
 const availableCategories = [
-  Category(
-    id: 'c1',
-    title: 'Italian',
-    color: Colors.purple,
-  ),
-  Category(
-    id: 'c2',
-    title: 'Quick & Easy',
-    color: Colors.red,
-  ),
-  Category(
-    id: 'c3',
-    title: 'Hamburgers',
-    color: Colors.orange,
-  ),
-  Category(
-    id: 'c4',
-    title: 'German',
-    color: Colors.amber,
-  ),
-  Category(
-    id: 'c5',
-    title: 'Light & Lovely',
-    color: Colors.blue,
-  ),
-  Category(
-    id: 'c6',
-    title: 'Exotic',
-    color: Colors.green,
-  ),
-  Category(
-    id: 'c7',
-    title: 'Breakfast',
-    color: Colors.lightBlue,
-  ),
-  Category(
-    id: 'c8',
-    title: 'Asian',
-    color: Colors.lightGreen,
-  ),
-  Category(
-    id: 'c9',
-    title: 'French',
-    color: Colors.pink,
-  ),
-  Category(
-    id: 'c10',
-    title: 'Summer',
-    color: Colors.teal,
-  ),
+Category(
+id: 'c1',
+title: 'Cardio',
+color: Colors.purple,
+),
+Category(
+id: 'c2',
+title: 'Strength Training',
+color: Colors.red,
+),
+Category(
+id: 'c3',
+title: 'Yoga',
+color: Colors.orange,
+),
+Category(
+id: 'c4',
+title: 'Pilates',
+color: Colors.amber,
+),
+Category(
+id: 'c5',
+title: 'HIIT',
+color: Colors.blue,
+),
+Category(
+id: 'c6',
+title: 'Cycling',
+color: Colors.green,
+),
+Category(
+id: 'c7',
+title: 'Running',
+color: Colors.lightBlue,
+),
+Category(
+id: 'c8',
+title: 'Dance',
+color: Colors.lightGreen,
+),
+Category(
+id: 'c9',
+title: 'Flexibility',
+color: Colors.pink,
+),
+Category(
+id: 'c10',
+title: 'Plyometrics',
+color: Colors.teal,
+),
 ];
 
 const dummyWorkouts = [
@@ -62,348 +62,416 @@ const dummyWorkouts = [
     id: 'm1',
     categories: [
       'c1',
-      'c2',
+      'c5',
     ],
-    title: 'Spaghetti with Tomato Sauce',
+    title:  'High-Intensity Interval Training (HIIT)',
+    vidurl:'https://www.youtube.com/watch?v=J212vz33gU4',
+    description: [
+                 'Burn calories and increase endurance with this intense workout'
+      
+    ],
     affordability: Affordability.affordable,
-    complexity: Complexity.simple,
+    difficulty: Difficulty.intermediate,
     imageUrl:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg/800px-Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg',
-    duration: 20,
-    ingredients: [
-      '4 Tomatoes',
-      '1 Tablespoon of Olive Oil',
-      '1 Onion',
-      '250g Spaghetti',
-      'Spices',
-      'Cheese (optional)'
+        'https://hips.hearstapps.com/hmg-prod/images/athletes-doing-push-ups-with-dumbbells-on-floor-royalty-free-image-1638463573.jpg',
+          
+    duration: 30,
+    equipments: [
+      'None'
     ],
     steps: [
-      'Cut the tomatoes and the onion into small pieces.',
-      'Boil some water - add salt to it once it boils.',
-      'Put the spaghetti into the boiling water - they should be done in about 10 to 12 minutes.',
-      'In the meantime, heaten up some olive oil and add the cut onion.',
-      'After 2 minutes, add the tomato pieces, salt, pepper and your other spices.',
-      'The sauce will be done once the spaghetti are.',
-      'Feel free to add some cheese on top of the finished dish.'
+      '1. Warm up for 5 minutes with light jogging or jumping jacks.',
+'2.Perform the following exercises in a 30 seconds work, 10 seconds rest format:',
+'-Burpees',
+'-Mountain climbers',
+'-Jump squats',
+'-High knees',
+'-Plank jacks',
+'Rest for 10 seconds.',
+'3.Repeat steps 2 and 3 for a total of 8 rounds.',
+'4.Cool down for 5 minutes with light stretching exercises.'
     ],
-    isGlutenFree: false,
-    isVegan: true,
-    isVegetarian: true,
-    isLactoseFree: true,
+    isfatloss: true,
+    ismusclegain: false,
+    isnoequipments: true,
+    isgymmachine: false,
   ),
-  Workout(
+   Workout(
     id: 'm2',
     categories: [
+      'c9',
       'c2',
     ],
-    title: 'Toast Hawaii',
+    title:  'Upper Body Blast',
+    vidurl:'https://www.youtube.com/watch?v=IJKPh47zKTk',
+    description: [
+                 'Sculpt and strengthen your upper body with this targeted workout.'
+      
+    ],
     affordability: Affordability.affordable,
-    complexity: Complexity.simple,
+    difficulty: Difficulty.intermediate,
     imageUrl:
-        'https://cdn.pixabay.com/photo/2018/07/11/21/51/toast-3532016_1280.jpg',
-    duration: 10,
-    ingredients: [
-      '1 Slice White Bread',
-      '1 Slice Ham',
-      '1 Slice Pineapple',
-      '1-2 Slices of Cheese',
-      'Butter'
+        'https://hips.hearstapps.com/hmg-prod/images/athletes-doing-push-ups-with-dumbbells-on-floor-royalty-free-image-1638463573.jpg',
+          
+    duration: 30,
+    equipments: [
+      'Dumbell',
+      'Bench(optional)'
     ],
     steps: [
-      'Butter one side of the white bread',
-      'Layer ham, the pineapple and cheese on the white bread',
-      'Bake the toast for round about 10 minutes in the oven at 200°C'
+      '1. Warm up for 5 minutes with arm circles and shoulder rolls.',
+      '2. Perform the following exercises with 3 sets of 12 repetitions each:',
+       '- Dumbbell bench press',
+   '- Bent-over rows',
+   '- Overhead press',
+   '- Bicep curls',
     ],
-    isGlutenFree: false,
-    isVegan: false,
-    isVegetarian: false,
-    isLactoseFree: false,
+    isfatloss: false,
+    ismusclegain: true,
+    isnoequipments: false,
+    isgymmachine: true,
   ),
   Workout(
     id: 'm3',
     categories: [
-      'c2',
       'c3',
+      
     ],
-    title: 'Classic Hamburger',
-    affordability: Affordability.pricey,
-    complexity: Complexity.simple,
+    title:  'Energizing Morning Yoga Flow',
+    vidurl:'https://www.youtube.com/watch?v=UEEsdXn8oG8',
+    description: [
+                 'Start your day with this energizing yoga flow to awaken your body and mind.'
+      
+    ],
+    affordability: Affordability.affordable,
+    difficulty: Difficulty.beginner,
     imageUrl:
-        'https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg',
-    duration: 45,
-    ingredients: [
-      '300g Cattle Hack',
-      '1 Tomato',
-      '1 Cucumber',
-      '1 Onion',
-      'Ketchup',
-      '2 Burger Buns'
+        'https://hips.hearstapps.com/hmg-prod/images/athletes-doing-push-ups-with-dumbbells-on-floor-royalty-free-image-1638463573.jpg',
+          
+    duration: 30,
+    equipments: [
+      'Yoga mat',
+      
     ],
     steps: [
-      'Form 2 patties',
-      'Fry the patties for c. 4 minutes on each side',
-      'Quickly fry the buns for c. 1 minute on each side',
-      'Bruch buns with ketchup',
-      'Serve burger with tomato, cucumber and onion'
+      '1. Begin in a seated position on your mat.',
+      '2. Perform the following yoga poses:',
+    '-Cat-Cow pose',
+   '-Downward-facing Dog',
+    '-Warrior I',
+    '-Warrior II',
+   '-Triangle pose',
+   '-Tree pose',
+   '-Child\'s pose',
+   '-Corpse pose',
+       
     ],
-    isGlutenFree: false,
-    isVegan: false,
-    isVegetarian: false,
-    isLactoseFree: true,
+    isfatloss: false,
+    ismusclegain: false,
+    isnoequipments: true,
+    isgymmachine: false,
   ),
-  Workout(
+Workout(
     id: 'm4',
     categories: [
-      'c4',
+      'c8',
+      'c1',
+      'c9',
+      'c7',
     ],
-    title: 'Wiener Schnitzel',
-    affordability: Affordability.luxurious,
-    complexity: Complexity.challenging,
+    title:  'Zumba Dance Party',
+    vidurl:'https://www.youtube.com/watch?v=tmpV2u1HD0I',
+    description: [
+                 'Get your heart pumping and groove to the beat with this fun Zumba dance workout.'
+      
+    ],
+    affordability: Affordability.affordable,
+    difficulty: Difficulty.beginner,
     imageUrl:
-        'https://cdn.pixabay.com/photo/2018/03/31/19/29/schnitzel-3279045_1280.jpg',
+        'https://hips.hearstapps.com/hmg-prod/images/athletes-doing-push-ups-with-dumbbells-on-floor-royalty-free-image-1638463573.jpg',
+          
     duration: 60,
-    ingredients: [
-      '8 Veal Cutlets',
-      '4 Eggs',
-      '200g Bread Crumbs',
-      '100g Flour',
-      '300ml Butter',
-      '100g Vegetable Oil',
-      'Salt',
-      'Lemon Slices'
+    equipments: [
+      'None',
+      
     ],
     steps: [
-      'Tenderize the veal to about 2–4mm, and salt on both sides.',
-      'On a flat plate, stir the eggs briefly with a fork.',
-      'Lightly coat the cutlets in flour then dip into the egg, and finally, coat in breadcrumbs.',
-      'Heat the butter and oil in a large pan (allow the fat to get very hot) and fry the schnitzels until golden brown on both sides.',
-      'Make sure to toss the pan regularly so that the schnitzels are surrounded by oil and the crumbing becomes ‘fluffy’.',
-      'Remove, and drain on kitchen paper. Fry the parsley in the remaining oil and drain.',
-      'Place the schnitzels on awarmed plate and serve garnishedwith parsley and slices of lemon.'
+      '1. Follow along with the Zumba instructor\'s dance routines.',
+      '2. Move to the rhythm of various dance styles, including salsa, merengue, hip-hop, and more.',
+      '3. Stay hydrated and take breaks as needed.',
+      '4. Enjoy the music and let loose on the dance floor!'
+    
     ],
-    isGlutenFree: false,
-    isVegan: false,
-    isVegetarian: false,
-    isLactoseFree: false,
+    isfatloss: true,
+    ismusclegain: false,
+    isnoequipments: true,
+    isgymmachine: false,
   ),
-  Workout(
+Workout(
     id: 'm5',
     categories: [
+      'c4',
       'c2',
-          'c5',
-      'c10',
     ],
-    title: 'Salad with Smoked Salmon',
-    affordability: Affordability.luxurious,
-    complexity: Complexity.simple,
+    title:  'Pilates Core Strengthening',
+    vidurl:'https://www.youtube.com/watch?v=U5LwQW_IQOc',
+    description: [
+                 'Sculpt and strengthen your core muscles with this Pilates-inspired workout.'
+      
+    ],
+    affordability: Affordability.affordable,
+    difficulty: Difficulty.beginner,
     imageUrl:
-        'https://cdn.pixabay.com/photo/2016/10/25/13/29/smoked-salmon-salad-1768890_1280.jpg',
-    duration: 15,
-    ingredients: [
-      'Arugula',
-      'Lamb\'s Lettuce',
-      'Parsley',
-      'Fennel',
-      '200g Smoked Salmon',
-      'Mustard',
-      'Balsamic Vinegar',
-      'Olive Oil',
-      'Salt and Pepper'
+        'https://hips.hearstapps.com/hmg-prod/images/athletes-doing-push-ups-with-dumbbells-on-floor-royalty-free-image-1638463573.jpg',
+          
+    duration: 30,
+    equipments: [
+      'Exercise mat',
+      
     ],
     steps: [
-      'Wash and cut salad and herbs',
-      'Dice the salmon',
-      'Process mustard, vinegar and olive oil into a dessing',
-      'Prepare the salad',
-      'Add salmon cubes and dressing'
+      '1. Start by lying on your back on the mat.',
+      '2. Perform the following Pilates exercises',
+     ' Hundred',
+'-Roll-ups',
+'-Single-leg stretch',
+'-Double-leg stretch',
+'-Scissor kicks',
+'-Pilates plank',
+'-Side plank'
+      '3. Complete 2 sets of 10 repetitions for each exercise.',
+      '4. Rest for 30 seconds between sets.',
+      '5.Finish with 5 minutes of stretching exercises.'
+    
     ],
-    isGlutenFree: true,
-    isVegan: false,
-    isVegetarian: true,
-    isLactoseFree: true,
+    isfatloss: false,
+    ismusclegain: true,
+    isnoequipments: true,
+    isgymmachine: false,
   ),
-  Workout(
+
+Workout(
     id: 'm6',
     categories: [
-      'c6',
-      'c10',
+      'c9',
+      'c2',
     ],
-    title: 'Delicious Orange Mousse',
+    title:  'Total Body Strength Training',
+    vidurl:'https://www.youtube.com/watch?v=USi3LmPlj_0',
+    description: [
+                 'Build strength and tone your muscles with this full-body strength training workout.'
+      
+    ],
     affordability: Affordability.affordable,
-    complexity: Complexity.hard,
+    difficulty: Difficulty.beginner,
     imageUrl:
-        'https://cdn.pixabay.com/photo/2017/05/01/05/18/pastry-2274750_1280.jpg',
-    duration: 240,
-    ingredients: [
-      '4 Sheets of Gelatine',
-      '150ml Orange Juice',
-      '80g Sugar',
-      '300g Yoghurt',
-      '200g Cream',
-      'Orange Peel',
+        'https://hips.hearstapps.com/hmg-prod/images/athletes-doing-push-ups-with-dumbbells-on-floor-royalty-free-image-1638463573.jpg',
+          
+    duration: 45,
+    equipments: [
+      'Exercise mat',
+      ' Dumbbells'
+      
     ],
     steps: [
-      'Dissolve gelatine in pot',
-      'Add orange juice and sugar',
-      'Take pot off the stove',
-      'Add 2 tablespoons of yoghurt',
-      'Stir gelatin under remaining yoghurt',
-      'Cool everything down in the refrigerator',
-      'Whip the cream and lift it under die orange mass',
-      'Cool down again for at least 4 hours',
-      'Serve with orange peel',
+      '1. Warm up with 5 minutes of light cardio, such as jogging or cycling.',
+      '2. Perform the following exercises:',
+     ' -Squats with dumbbells',
+'-Lunges with dumbbells',
+'-Push-ups',
+'-Dumbbell rows',
+'-Shoulder press with dumbbells',
+'-Bicep curls with dumbbells',
+'-Tricep dips'
+      '3. Complete 3 sets of 12 repetitions for each exercise',
+      '4. Rest for 1 minute between sets.',
+      '5. Cool down with 5 minutes of stretching exercises.'
+    
     ],
-    isGlutenFree: true,
-    isVegan: false,
-    isVegetarian: true,
-    isLactoseFree: false,
+    isfatloss: false,
+    ismusclegain: true,
+    isnoequipments: false,
+    isgymmachine: true,
   ),
   Workout(
     id: 'm7',
     categories: [
-      'c7',
+      'c1',
+      'c5',
+      'c6'
     ],
-    title: 'Pancakes',
+    title:  'Tabata Fat Burner',
+    vidurl:'https://www.youtube.com/watch?v=d8BFKmkmxV4',
+    description: [
+                 'Burn calories and improve endurance with this high-intensity Tabata workout.'
+      
+    ],
     affordability: Affordability.affordable,
-    complexity: Complexity.simple,
+    difficulty: Difficulty.advanced,
     imageUrl:
-        'https://cdn.pixabay.com/photo/2018/07/10/21/23/pancake-3529653_1280.jpg',
+        'https://hips.hearstapps.com/hmg-prod/images/athletes-doing-push-ups-with-dumbbells-on-floor-royalty-free-image-1638463573.jpg',
+          
     duration: 20,
-    ingredients: [
-      '1 1/2 Cups all-purpose Flour',
-      '3 1/2 Teaspoons Baking Powder',
-      '1 Teaspoon Salt',
-      '1 Tablespoon White Sugar',
-      '1 1/4 cups Milk',
-      '1 Egg',
-      '3 Tablespoons Butter, melted',
+    equipments: [
+      'None'
+      
     ],
     steps: [
-      'In a large bowl, sift together the flour, baking powder, salt and sugar.',
-      'Make a well in the center and pour in the milk, egg and melted butter; mix until smooth.',
-      'Heat a lightly oiled griddle or frying pan over medium high heat.',
-      'Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake. Brown on both sides and serve hot.'
+      '1. Perform the following exercises in a Tabata interval format (20 seconds work, 10 seconds rest):',
+      
+'-Jumping jacks',
+'-Burpees',
+'-High knees',
+'-Mountain climbers',
+'-Squat jumps',
+'2. Complete 8 rounds of each exercise.',
+'3. Rest for 1 minute between exercises.',
+'4. Cool down with 5 minutes of stretching exercises.'
+
+    
     ],
-    isGlutenFree: true,
-    isVegan: false,
-    isVegetarian: true,
-    isLactoseFree: false,
+    isfatloss: true,
+    ismusclegain: false,
+    isnoequipments: false,
+    isgymmachine: false,
   ),
   Workout(
     id: 'm8',
     categories: [
-      'c8',
+      'c3',
+      
     ],
-    title: 'Creamy Indian Chicken Curry',
-    affordability: Affordability.pricey,
-    complexity: Complexity.challenging,
+    title:  'Restorative Yoga for Stress Relief',
+    vidurl:'https://www.youtube.com/watch?v=sTANio_2E0Q',
+    description: [
+                 'Release tension and find inner calm with this restorative yoga sequence.'
+      
+    ],
+    affordability: Affordability.affordable,
+    difficulty: Difficulty.beginner,
     imageUrl:
-        'https://cdn.pixabay.com/photo/2018/06/18/16/05/indian-food-3482749_1280.jpg',
-    duration: 35,
-    ingredients: [
-      '4 Chicken Breasts',
-      '1 Onion',
-      '2 Cloves of Garlic',
-      '1 Piece of Ginger',
-      '4 Tablespoons Almonds',
-      '1 Teaspoon Cayenne Pepper',
-      '500ml Coconut Milk',
+        'https://hips.hearstapps.com/hmg-prod/images/athletes-doing-push-ups-with-dumbbells-on-floor-royalty-free-image-1638463573.jpg',
+          
+    duration: 45,
+    equipments: [
+      'Yoga mat',
+      ' Bolster or Cushions',
+       'Blanket'
+      
     ],
     steps: [
-      'Slice and fry the chicken breast',
-      'Process onion, garlic and ginger into paste and sauté everything',
-      'Add spices and stir fry',
-      'Add chicken breast + 250ml of water and cook everything for 10 minutes',
-      'Add coconut milk',
-      'Serve with rice'
+      '1.Set up a comfortable space with your yoga mat, bolster or cushions, and a blanket.',
+      '2. Perform the following restorative yoga poses',
+     ' -Supported child\'s pose',
+'-Supported bridge pose',
+'-Legs up the wall pose',
+'-Reclining bound angle pose',
+'-Corpse pose with bolster under knees',
+
+      '3. Hold each pose for 5-10 minutes, allowing your body to relax deeply.',
+      '4. Focus on your breath and let go of any tension or stress.',
+      '5. End the practice with 10 minutes of guided relaxation or meditation.'
+    
     ],
-    isGlutenFree: true,
-    isVegan: false,
-    isVegetarian: false,
-    isLactoseFree: true,
+    isfatloss: false,
+    ismusclegain: false,
+    isnoequipments: true,
+    isgymmachine: false,
   ),
-  Workout(
+  
+   Workout(
     id: 'm9',
     categories: [
-      'c9',
+      'c1',
+      'c6',
+      'c5',
     ],
-    title: 'Chocolate Souffle',
+    title:  'Indoor Cycling Intervals',
+    vidurl:'https://www.youtube.com/watch?v=dFv15REmXsg',
+    description: [
+                 'Boost your cardiovascular fitness and endurance with this indoor cycling workout.'
+      
+    ],
     affordability: Affordability.affordable,
-    complexity: Complexity.hard,
+    difficulty: Difficulty.beginner,
     imageUrl:
-        'https://cdn.pixabay.com/photo/2014/08/07/21/07/souffle-412785_1280.jpg',
+        'https://hips.hearstapps.com/hmg-prod/images/athletes-doing-push-ups-with-dumbbells-on-floor-royalty-free-image-1638463573.jpg',
+          
     duration: 45,
-    ingredients: [
-      '1 Teaspoon melted Butter',
-      '2 Tablespoons white Sugar',
-      '2 Ounces 70% dark Chocolate, broken into pieces',
-      '1 Tablespoon Butter',
-      '1 Tablespoon all-purpose Flour',
-      '4 1/3 tablespoons cold Milk',
-      '1 Pinch Salt',
-      '1 Pinch Cayenne Pepper',
-      '1 Large Egg Yolk',
-      '2 Large Egg Whites',
-      '1 Pinch Cream of Tartar',
-      '1 Tablespoon white Sugar',
+    equipments: [
+      'Stationary bike',
+      
+      
     ],
     steps: [
-      'Preheat oven to 190°C. Line a rimmed baking sheet with parchment paper.',
-      'Brush bottom and sides of 2 ramekins lightly with 1 teaspoon melted butter; cover bottom and sides right up to the rim.',
-      'Add 1 tablespoon white sugar to ramekins. Rotate ramekins until sugar coats all surfaces.',
-      'Place chocolate pieces in a metal mixing bowl.',
-      'Place bowl over a pan of about 3 cups hot water over low heat.',
-      'Melt 1 tablespoon butter in a skillet over medium heat. Sprinkle in flour. Whisk until flour is incorporated into butter and mixture thickens.',
-      'Whisk in cold milk until mixture becomes smooth and thickens. Transfer mixture to bowl with melted chocolate.',
-      'Add salt and cayenne pepper. Mix together thoroughly. Add egg yolk and mix to combine.',
-      'Leave bowl above the hot (not simmering) water to keep chocolate warm while you whip the egg whites.',
-      'Place 2 egg whites in a mixing bowl; add cream of tartar. Whisk until mixture begins to thicken and a drizzle from the whisk stays on the surface about 1 second before disappearing into the mix.',
-      'Add 1/3 of sugar and whisk in. Whisk in a bit more sugar about 15 seconds.',
-      'whisk in the rest of the sugar. Continue whisking until mixture is about as thick as shaving cream and holds soft peaks, 3 to 5 minutes.',
-      'Transfer a little less than half of egg whites to chocolate.',
-      'Mix until egg whites are thoroughly incorporated into the chocolate.',
-      'Add the rest of the egg whites; gently fold into the chocolate with a spatula, lifting from the bottom and folding over.',
-      'Stop mixing after the egg white disappears. Divide mixture between 2 prepared ramekins. Place ramekins on prepared baking sheet.',
-      'Bake in preheated oven until scuffles are puffed and have risen above the top of the rims, 12 to 15 minutes.',
+      '1.Adjust the bike seat and handlebars to the appropriate height.',
+      '2. Perform the following cycling intervals:',
+     ' -Warm up with 5 minutes of easy pedaling.',
+'-Alternate between 2 minutes of moderate intensity and 1 minute of high intensity for 30 minutes.',
+'-Cool down with 5 minutes of easy pedaling.',
+
+
+      '3. Follow your preferred RPM (revolutions per minute) range for each intensity level.',
+      '4. Stay hydrated and maintain proper form throughout the workout.',
+      
+    
     ],
-    isGlutenFree: true,
-    isVegan: false,
-    isVegetarian: true,
-    isLactoseFree: false,
+    isfatloss: true,
+    ismusclegain: false,
+    isnoequipments: false,
+    isgymmachine: true,
   ),
-  Workout(
+   Workout(
     id: 'm10',
     categories: [
+      
       'c2',
-      'c5',
-      'c10',
     ],
-    title: 'Asparagus Salad with Cherry Tomatoes',
-    affordability: Affordability.luxurious,
-    complexity: Complexity.simple,
+    title:  'Lower Body Blast',
+    vidurl:'https://www.youtube.com/watch?v=_PRk8DH2_mY',
+    description: [
+                 'Sculpt and strengthen your lower body muscles with this targeted workout.'
+      
+    ],
+    affordability: Affordability.affordable,
+    difficulty: Difficulty.intermediate,
     imageUrl:
-        'https://cdn.pixabay.com/photo/2018/04/09/18/26/asparagus-3304997_1280.jpg',
+        'https://hips.hearstapps.com/hmg-prod/images/athletes-doing-push-ups-with-dumbbells-on-floor-royalty-free-image-1638463573.jpg',
+          
     duration: 30,
-    ingredients: [
-      'White and Green Asparagus',
-      '30g Pine Nuts',
-      '300g Cherry Tomatoes',
-      'Salad',
-      'Salt, Pepper and Olive Oil'
+    equipments: [
+      'Dumbbells',
+      'Exercise Mat'
+      
+      
     ],
     steps: [
-      'Wash, peel and cut the asparagus',
-      'Cook in salted water',
-      'Salt and pepper the asparagus',
-      'Roast the pine nuts',
-      'Halve the tomatoes',
-      'Mix with asparagus, salad and dressing',
-      'Serve with Baguette'
+      '1.Warm up with 5 minutes of light cardio, such as marching or jogging in place.',
+      '2. Perform the following exercises:',
+     ' -Goblet squats with dumbbell',
+'-Lunges with dumbbells',
+'-Deadlifts with dumbbells',
+'-Glute bridges with dumbbell on hips'
+'-Calf raises with dumbbells',
+'-Side lunges with dumbbells'
+
+
+      '3. Complete 3 sets of 12 repetitions for each exercise.',
+      '4. Rest for 30 seconds between sets.',
+      '5. Cool down with 5 minutes of stretching exercises.'
+    
     ],
-    isGlutenFree: true,
-    isVegan: true,
-    isVegetarian: true,
-    isLactoseFree: true,
+    isfatloss: true,
+    ismusclegain: true,
+    isnoequipments:false,
+    isgymmachine:false,
   ),
+ 
+
+
+
+
+
+
+
 ];

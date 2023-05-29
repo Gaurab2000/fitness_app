@@ -15,8 +15,8 @@ class WorkoutItem extends StatelessWidget {
   final void Function(Workout workout) onSelectWorkout;
 
   String get complexityText {
-    return workout.complexity.name[0].toUpperCase() +
-        workout.complexity.name.substring(1);
+    return workout.difficulty.name[0].toUpperCase() +
+        workout.difficulty.name.substring(1);
   }
 
   String get affordabilityText {
@@ -79,16 +79,16 @@ class WorkoutItem extends StatelessWidget {
                           icon: Icons.schedule,
                           label: '${workout.duration} min',
                         ),
-                        const SizedBox(width: 12),
+                        const SizedBox(width: 10),
                         WorkoutItemTrait(
                           icon: Icons.work,
                           label: complexityText,
                         ),
-                        const SizedBox(width: 12),
-                        WorkoutItemTrait(
-                          icon: Icons.attach_money,
-                          label: affordabilityText,
-                        )
+                        const SizedBox(width: 10),
+                       // WorkoutItemTrait(
+                        //  icon: Icons.attach_money,
+                        //  label: affordabilityText,
+                       // )
                       ],
                     ),
                   ],

@@ -11,10 +11,10 @@ import 'package:fitness_app/providers/favorites_provider.dart';
 import 'package:fitness_app/providers/filters_provider.dart';
 
 const kInitialFilters = {
-  Filter.glutenFree: false,
-  Filter.lactoseFree: false,
-  Filter.vegetarian: false,
-  Filter.vegan: false
+  Filter.fatloss: false,
+  Filter.musclegain: false,
+  Filter.noequipments: false,
+  Filter.gymmachine: false
 };
 
 class TabsScreen extends ConsumerStatefulWidget {

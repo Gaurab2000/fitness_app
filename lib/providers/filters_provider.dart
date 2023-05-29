@@ -2,19 +2,19 @@ import 'package:fitness_app/providers/workouts_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 enum Filter {
-  glutenFree,
-  lactoseFree,
-  vegetarian,
-  vegan,
+  fatloss,
+  musclegain,
+  noequipments,
+  gymmachine,
 }
 
 class FiltersNotifier extends StateNotifier<Map<Filter, bool>> {
   FiltersNotifier()
       : super({
-          Filter.glutenFree: false,
-          Filter.lactoseFree: false,
-          Filter.vegetarian: false,
-          Filter.vegan: false
+          Filter.fatloss: false,
+          Filter.musclegain: false,
+          Filter.noequipments: false,
+          Filter.gymmachine: false
         });
 
   void setFilters(Map<Filter, bool> chosenFilters) {
@@ -39,16 +39,16 @@ final filteredWorkoutsProvider = Provider((ref) {
   final activeFilters = ref.watch(filtersProvider);
 
   return Workouts.where((workout) {
-    if (activeFilters[Filter.glutenFree]! && !workout.isGlutenFree) {
+    if (activeFilters[Filter.fatloss]! && !workout.isfatloss) {
       return false;
     }
-    if (activeFilters[Filter.lactoseFree]! && !workout.isLactoseFree) {
+    if (activeFilters[Filter.musclegain]! && !workout.ismusclegain) {
       return false;
     }
-    if (activeFilters[Filter.vegetarian]! && !workout.isVegetarian) {
+    if (activeFilters[Filter.noequipments]! && !workout.isnoequipments) {
       return false;
     }
-    if (activeFilters[Filter.vegan]! && !workout.isVegan) {
+    if (activeFilters[Filter.gymmachine]! && !workout.isgymmachine) {
       return false;
     }
     return true;

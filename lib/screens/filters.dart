@@ -23,18 +23,18 @@ class FiltersScreen extends ConsumerWidget {
         Column(
           children: [
             SwitchListTile(
-              value: activeFilters[Filter.glutenFree]!,
+              value: activeFilters[Filter.fatloss]!,
               onChanged: (isChecked) {
-                ref.read(filtersProvider.notifier).setFilter(Filter.glutenFree, isChecked);
+                ref.read(filtersProvider.notifier).setFilter(Filter.fatloss, isChecked);
               },
               title: Text(
-                'Gluten-free',
+                'Fat-loss',
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
                       color: Theme.of(context).colorScheme.onBackground,
                     ),
               ),
               subtitle: Text(
-                'Only include gluten-free meals.',
+                'Only include fat loss workout',
                 style: Theme.of(context).textTheme.labelMedium!.copyWith(
                       color: Theme.of(context).colorScheme.onBackground,
                     ),
@@ -43,18 +43,18 @@ class FiltersScreen extends ConsumerWidget {
               contentPadding: const EdgeInsets.only(left: 34, right: 22),
             ),
             SwitchListTile(
-               value: activeFilters[Filter.lactoseFree]!,
+               value: activeFilters[Filter.musclegain]!,
               onChanged: (isChecked) {
-                ref.read(filtersProvider.notifier).setFilter(Filter.lactoseFree, isChecked);
+                ref.read(filtersProvider.notifier).setFilter(Filter.musclegain, isChecked);
               },
               title: Text(
-                'Lactose-free',
+                'Muscle gain',
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
                       color: Theme.of(context).colorScheme.onBackground,
                     ),
               ),
               subtitle: Text(
-                'Only include lactose-free meals.',
+                'Only include muscle gain workout',
                 style: Theme.of(context).textTheme.labelMedium!.copyWith(
                       color: Theme.of(context).colorScheme.onBackground,
                     ),
@@ -63,18 +63,18 @@ class FiltersScreen extends ConsumerWidget {
               contentPadding: const EdgeInsets.only(left: 34, right: 22),
             ),
             SwitchListTile(
-              value: activeFilters[Filter.vegetarian]!,
+              value: activeFilters[Filter.noequipments]!,
               onChanged: (isChecked) {
-                ref.read(filtersProvider.notifier).setFilter(Filter.vegetarian, isChecked);
+                ref.read(filtersProvider.notifier).setFilter(Filter.noequipments, isChecked);
               },
               title: Text(
-                'Vegetarian',
+                'No equipments',
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
                       color: Theme.of(context).colorScheme.onBackground,
                     ),
               ),
               subtitle: Text(
-                'Only include vegetarian meals.',
+                'Only include workouts that do not require equipments',
                 style: Theme.of(context).textTheme.labelMedium!.copyWith(
                       color: Theme.of(context).colorScheme.onBackground,
                     ),
@@ -83,18 +83,18 @@ class FiltersScreen extends ConsumerWidget {
               contentPadding: const EdgeInsets.only(left: 34, right: 22),
             ),
             SwitchListTile(
-               value: activeFilters[Filter.vegan]!,
+               value: activeFilters[Filter.gymmachine]!,
               onChanged: (isChecked) {
-                ref.read(filtersProvider.notifier).setFilter(Filter.vegan, isChecked);
+                ref.read(filtersProvider.notifier).setFilter(Filter.gymmachine, isChecked);
               },
               title: Text(
-                'Vegan',
+                'Gym machine',
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
                       color: Theme.of(context).colorScheme.onBackground,
                     ),
               ),
               subtitle: Text(
-                'Only include vegan meals.',
+                'Only include workouts which can be done in gym',
                 style: Theme.of(context).textTheme.labelMedium!.copyWith(
                       color: Theme.of(context).colorScheme.onBackground,
                     ),
