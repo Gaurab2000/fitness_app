@@ -1,7 +1,6 @@
-import 'package:fitness_app/data/dummy_data.dart';
-import 'package:fitness_app/screens/categories.dart';
+
 import 'package:fitness_app/screens/tabs.dart';
-import 'package:fitness_app/screens/workouts.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
