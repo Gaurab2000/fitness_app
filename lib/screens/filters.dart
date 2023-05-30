@@ -32,7 +32,7 @@ class FiltersScreen extends ConsumerWidget {
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
                       color: Theme.of(context).colorScheme.onBackground,
                     ),
-              ),
+              ),//text
               subtitle: Text(
                 'Only include fat loss workout',
                 style: Theme.of(context).textTheme.labelMedium!.copyWith(
