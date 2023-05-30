@@ -52,7 +52,7 @@ color: Colors.pink,
 ),
 Category(
 id: 'c10',
-title: 'Plyometrics',
+title: 'All',
 color: Colors.teal,
 ),
 ];
@@ -63,6 +63,7 @@ const dummyWorkouts = [
     categories: [
       'c1',
       'c5',
+      'c10',
     ],
     title:  'High-Intensity Interval Training (HIIT)',
     vidurl:'https://www.youtube.com/watch?v=J212vz33gU4',
@@ -73,7 +74,7 @@ const dummyWorkouts = [
     affordability: Affordability.affordable,
     difficulty: Difficulty.intermediate,
     imageUrl:
-        'https://hips.hearstapps.com/hmg-prod/images/athletes-doing-push-ups-with-dumbbells-on-floor-royalty-free-image-1638463573.jpg',
+        'https://lmimirroralphapvr.azureedge.net/static/media/7629/3f587500-ddc3-415b-a7c0-a8272bba87a7/hiit_960x540-v2.jpg',
           
     duration: 30,
     equipments: [
@@ -101,6 +102,7 @@ const dummyWorkouts = [
     categories: [
       'c9',
       'c2',
+      'c10',
     ],
     title:  'Upper Body Blast',
     vidurl:'https://www.youtube.com/watch?v=IJKPh47zKTk',
@@ -111,9 +113,9 @@ const dummyWorkouts = [
     affordability: Affordability.affordable,
     difficulty: Difficulty.intermediate,
     imageUrl:
-        'https://hips.hearstapps.com/hmg-prod/images/athletes-doing-push-ups-with-dumbbells-on-floor-royalty-free-image-1638463573.jpg',
+        'https://2lazy4gym.files.wordpress.com/2021/07/cgcomplexseriesday2.jpg?w=1200g',
           
-    duration: 30,
+    duration: 40,
     equipments: [
       'Dumbell',
       'Bench(optional)'
@@ -135,6 +137,7 @@ const dummyWorkouts = [
     id: 'm3',
     categories: [
       'c3',
+      'c10',
       
     ],
     title:  'Energizing Morning Yoga Flow',
@@ -146,7 +149,7 @@ const dummyWorkouts = [
     affordability: Affordability.affordable,
     difficulty: Difficulty.beginner,
     imageUrl:
-        'https://hips.hearstapps.com/hmg-prod/images/athletes-doing-push-ups-with-dumbbells-on-floor-royalty-free-image-1638463573.jpg',
+        'https://blog-images-1.pharmeasy.in/blog/production/wp-content/uploads/2021/02/01200417/shutterstock_324427688-1.jpg',
           
     duration: 30,
     equipments: [
@@ -178,6 +181,7 @@ Workout(
       'c1',
       'c9',
       'c7',
+      'c10',
     ],
     title:  'Zumba Dance Party',
     vidurl:'https://www.youtube.com/watch?v=tmpV2u1HD0I',
@@ -188,7 +192,7 @@ Workout(
     affordability: Affordability.affordable,
     difficulty: Difficulty.beginner,
     imageUrl:
-        'https://hips.hearstapps.com/hmg-prod/images/athletes-doing-push-ups-with-dumbbells-on-floor-royalty-free-image-1638463573.jpg',
+        'https://www.kreedon.com/wp-content/uploads/2023/03/WhatsApp-Image-2020-12-08-at-12.10.59-PM-5.jpeg',
           
     duration: 60,
     equipments: [
@@ -212,6 +216,7 @@ Workout(
     categories: [
       'c4',
       'c2',
+      'c10',
     ],
     title:  'Pilates Core Strengthening',
     vidurl:'https://www.youtube.com/watch?v=U5LwQW_IQOc',
@@ -220,9 +225,9 @@ Workout(
       
     ],
     affordability: Affordability.affordable,
-    difficulty: Difficulty.beginner,
+    difficulty: Difficulty.intermediate,
     imageUrl:
-        'https://hips.hearstapps.com/hmg-prod/images/athletes-doing-push-ups-with-dumbbells-on-floor-royalty-free-image-1638463573.jpg',
+        'https://assets.sweat.com/html_body_blocks/images/000/021/480/original/PilatesCoreMoves_en87ff3960350295920d818c1a6806a7df.jpg?1620017466',
           
     duration: 30,
     equipments: [
@@ -255,6 +260,7 @@ Workout(
     categories: [
       'c9',
       'c2',
+      'c10',
     ],
     title:  'Total Body Strength Training',
     vidurl:'https://www.youtube.com/watch?v=USi3LmPlj_0',
@@ -263,9 +269,9 @@ Workout(
       
     ],
     affordability: Affordability.affordable,
-    difficulty: Difficulty.beginner,
+    difficulty: Difficulty.advanced,
     imageUrl:
-        'https://hips.hearstapps.com/hmg-prod/images/athletes-doing-push-ups-with-dumbbells-on-floor-royalty-free-image-1638463573.jpg',
+        'https://builtwithscience.com/wp-content/uploads/2019/01/full-body-workout-A-thumbnail-min.jpg',
           
     duration: 45,
     equipments: [
@@ -298,7 +304,8 @@ Workout(
     categories: [
       'c1',
       'c5',
-      'c6'
+      'c6',
+      'c10',
     ],
     title:  'Tabata Fat Burner',
     vidurl:'https://www.youtube.com/watch?v=d8BFKmkmxV4',
@@ -309,7 +316,7 @@ Workout(
     affordability: Affordability.affordable,
     difficulty: Difficulty.advanced,
     imageUrl:
-        'https://hips.hearstapps.com/hmg-prod/images/athletes-doing-push-ups-with-dumbbells-on-floor-royalty-free-image-1638463573.jpg',
+        'https://i.ytimg.com/vi/p4sileExjLo/maxresdefault.jpg',
           
     duration: 20,
     equipments: [
@@ -339,6 +346,7 @@ Workout(
     id: 'm8',
     categories: [
       'c3',
+      'c10',
       
     ],
     title:  'Restorative Yoga for Stress Relief',
@@ -350,7 +358,7 @@ Workout(
     affordability: Affordability.affordable,
     difficulty: Difficulty.beginner,
     imageUrl:
-        'https://hips.hearstapps.com/hmg-prod/images/athletes-doing-push-ups-with-dumbbells-on-floor-royalty-free-image-1638463573.jpg',
+        'https://i.ytimg.com/vi/hJbRpHZr_d0/maxresdefault.jpg',
           
     duration: 45,
     equipments: [
@@ -385,6 +393,7 @@ Workout(
       'c1',
       'c6',
       'c5',
+      'c10',
     ],
     title:  'Indoor Cycling Intervals',
     vidurl:'https://www.youtube.com/watch?v=dFv15REmXsg',
@@ -393,9 +402,9 @@ Workout(
       
     ],
     affordability: Affordability.affordable,
-    difficulty: Difficulty.beginner,
+    difficulty: Difficulty.intermediate,
     imageUrl:
-        'https://hips.hearstapps.com/hmg-prod/images/athletes-doing-push-ups-with-dumbbells-on-floor-royalty-free-image-1638463573.jpg',
+        'https://hips.hearstapps.com/hmg-prod/images/sportsmen-working-out-hard-on-cycling-machines-royalty-free-image-845636176-1565175905.jpg',
           
     duration: 45,
     equipments: [
@@ -426,6 +435,7 @@ Workout(
     categories: [
       
       'c2',
+      'c10',
     ],
     title:  'Lower Body Blast',
     vidurl:'https://www.youtube.com/watch?v=_PRk8DH2_mY',
@@ -434,9 +444,9 @@ Workout(
       
     ],
     affordability: Affordability.affordable,
-    difficulty: Difficulty.intermediate,
+    difficulty: Difficulty.advanced,
     imageUrl:
-        'https://hips.hearstapps.com/hmg-prod/images/athletes-doing-push-ups-with-dumbbells-on-floor-royalty-free-image-1638463573.jpg',
+        'https://builtwithscience.com/wp-content/uploads/2020/12/Lower-body-workout-dumbbells-only-thumbnail.jpg',
           
     duration: 30,
     equipments: [
