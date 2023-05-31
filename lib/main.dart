@@ -1,10 +1,10 @@
 
 import 'package:fitness_app/screens/tabs.dart';
-import 'package:fitness_app/widgets/splash_screen.dart';
+import 'package:fitness_app/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 final theme = ThemeData(
   useMaterial3: true,
   colorScheme: ColorScheme.fromSeed(
@@ -14,7 +14,8 @@ final theme = ThemeData(
   textTheme: GoogleFonts.latoTextTheme(),
 );
 
-void main() {
+void main()  {
+
  runApp(
     const ProviderScope(
       child: App(),

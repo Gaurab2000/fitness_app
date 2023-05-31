@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'dart:async';
 
-import 'package:flutter/material.dart';
+
 import 'package:flutter/services.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -38,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen>
     Timer(const Duration(seconds: 4), () {
       // Navigate to the next screen after loading
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => TabsScreen()),
+        MaterialPageRoute(builder: (_) => const TabsScreen()),
       );
     });
   }
@@ -91,9 +91,9 @@ class _SplashScreenState extends State<SplashScreen>
             ),
           ),
           // Loading indicator
-          const Center(
-            child: CircularProgressIndicator(),
-          ),
+          //const Center(
+          //  child: CircularProgressIndicator(),
+          //),
           // Branding elements
           Positioned(
             bottom: 50,
