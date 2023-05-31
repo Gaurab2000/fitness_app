@@ -9,7 +9,7 @@
 .history
 .svn/
 migrate_working_dir/
-.env
+
 
 # IntelliJ related
 *.iml
@@ -49,3 +49,4 @@ app.*.map.json
 
 # Detect
 *.dart linguist-detectable
+ .env
