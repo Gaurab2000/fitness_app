@@ -65,6 +65,13 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
       );
       activePageTitle = 'Your Favorites';
     }
+    else if (_selectedPageIndex == 2){
+     activePage = Container(
+    alignment: Alignment.center,
+    child: const Text('Coming soon', style: TextStyle(color: Colors.white)),
+  );
+  activePageTitle = 'ChatBot';
+}
 
     return Scaffold(
       appBar: AppBar(
@@ -85,6 +92,10 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.star),
             label: 'Favorites',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.chat),
+            label: 'ChatBot',
           ),
         ],
       ),
