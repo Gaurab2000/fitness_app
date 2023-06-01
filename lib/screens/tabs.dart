@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-
+import 'package:fitness_app/widgets/appbar_animation.dart';
 import 'package:fitness_app/screens/categories.dart';
 import 'package:fitness_app/screens/filters.dart';
 import 'package:fitness_app/screens/workouts.dart';
@@ -75,7 +75,32 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(activePageTitle),
+      
+        title: Text(activePageTitle,
+        style: const TextStyle(
+            color: Colors.white,
+            fontSize: 24.0,
+            fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic,
+            letterSpacing: 1.5,
+            shadows: [
+              Shadow(
+                color: Colors.black,
+                offset: Offset(2.0, 2.0),
+                blurRadius: 3.0,
+              ),
+            ],
+            //decoration: TextDecoration.underline,
+            //decorationColor: Color.fromARGB(255, 231, 224, 224),
+           // decorationStyle: TextDecorationStyle.double,
+            fontFamily: 'Montserrat',
+          ),
+          ),
+          centerTitle: true,
+          backgroundColor: const Color.fromARGB(255, 24, 24, 25),
+        elevation: 4.0,
+       
+             // AnimatedAppBarTitle(),
       ),
       drawer: MainDrawer(
         onSelectScreen: _setScreen,
