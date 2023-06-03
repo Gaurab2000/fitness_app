@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:fitness_app/widgets/appbar_animation.dart';
 import 'package:fitness_app/screens/categories.dart';
 import 'package:fitness_app/screens/filters.dart';
 import 'package:fitness_app/screens/workouts.dart';
@@ -106,24 +105,32 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
         onSelectScreen: _setScreen,
       ),
       body: activePage,
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: _selectPage,
-        currentIndex: _selectedPageIndex,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.set_meal),
-            label: 'Categories',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.star),
-            label: 'Favorites',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
-            label: 'ChatBot',
-          ),
-        ],
-      ),
+      bottomNavigationBar:  BottomNavigationBar(
+      items: const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: Icon(Icons.set_meal),
+          label: 'Categories',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.star),
+          label: 'Favorites',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.chat),
+          label: 'ChatBot',
+        ),
+
+      ],
+      currentIndex: _selectedPageIndex,
+      selectedItemColor: const Color(0xFFF6925C),
+      onTap: _selectPage,
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
+      type: BottomNavigationBarType.fixed,
+    )
     );
+    
   }
 }
