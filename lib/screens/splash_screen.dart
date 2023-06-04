@@ -39,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen>
     Timer(const Duration(seconds: 4), () {
       // Navigate to the next screen after loading
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) =>  FitnessAppHomePage()),
+        MaterialPageRoute(builder: (_) =>  const HomeSreen()),
       );
     });
   }
