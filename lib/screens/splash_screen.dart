@@ -1,3 +1,4 @@
+import 'package:fitness_app/screens/homepage.dart';
 import 'package:fitness_app/screens/tabs.dart';
 import 'package:flutter/material.dart';
 
@@ -38,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen>
     Timer(const Duration(seconds: 4), () {
       // Navigate to the next screen after loading
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => const TabsScreen()),
+        MaterialPageRoute(builder: (_) =>  FitnessAppHomePage()),
       );
     });
   }

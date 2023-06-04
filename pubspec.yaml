@@ -45,6 +45,7 @@ dependencies:
   flutter_dotenv: ^5.0.2
   flutter_sequence_animation: "^4.0.0"
   flutter_svg: ^2.0.5
+  carousel_slider: ^4.2.1
 
 
 dev_dependencies:
