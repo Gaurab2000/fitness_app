@@ -3,12 +3,12 @@ import 'package:flutter_svg/svg.dart';
 import 'package:fitness_app/models/fitness.dart';
 
 class RecipeCard extends StatelessWidget {
-  const RecipeCard({Key? key, this.active, this.index, this.recipe})
+  const RecipeCard({Key? key, this.active, this.index, this.fitness})
       : super(key: key);
 
   final bool? active;
   final int? index;
-  final Recipe? recipe;
+  final Fitness? fitness;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class RecipeCard extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(32),
-        color: recipe!.startColor!,
+        color: fitness!.startColor!,
         boxShadow: [
           BoxShadow(
             color: Colors.black87.withOpacity(0.1),
@@ -37,7 +37,7 @@ class RecipeCard extends StatelessWidget {
         ],
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: AssetImage('assets/images/${recipe!.recipeImage}'),
+          image: AssetImage('assets/images/${fitness!.fitnessImage}'),
         ),
       ),
       child: Stack(
@@ -47,8 +47,8 @@ class RecipeCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(32),
                 gradient: LinearGradient(
                     colors: [
-                      recipe!.startColor!,
-                      recipe!.endColor!.withOpacity(0.3),
+                      fitness!.startColor!,
+                      fitness!.endColor!.withOpacity(0.3),
                     ],
                     begin: Alignment.bottomRight,
                     end: Alignment.topLeft,
@@ -67,13 +67,13 @@ class RecipeCard extends StatelessWidget {
               ),
               height: 87,
               decoration: BoxDecoration(
-                  color: recipe!.startColor,
+                  color: fitness!.startColor,
                   borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(32),
                     bottomRight: Radius.circular(32),
                   )),
               child: Text(
-                recipe!.recipeName,
+                fitness!.fitnessName,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
                 style: const TextStyle(
@@ -104,10 +104,10 @@ class RecipeCard extends StatelessWidget {
                       color: Colors.white,
                     ),
                     child: Text(
-                      'Recipe',
+                      'FitFlex',
                       style: TextStyle(
                         fontSize: 13,
-                        color: recipe!.startColor,
+                        color: fitness!.startColor,
                       ),
                     ),
                   ),

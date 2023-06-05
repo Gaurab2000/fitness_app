@@ -1,3 +1,4 @@
+import 'package:fitness_app/screens/workoutchallenge.dart';
 import 'package:flutter/material.dart';
 import 'package:fitness_app/widgets/recipe_card.dart';
 import 'package:fitness_app/models/fitness.dart';
@@ -21,7 +22,7 @@ class _PageViewRecipeListState extends State<PageViewRecipeList> {
       child: PageView.builder(
         padEnds: false,
         controller: pageController,
-        itemCount: recipes.length,
+        itemCount: fitnesses.length,
         physics: const BouncingScrollPhysics(),
         itemBuilder: (context, index) {
           bool active = index == currentPage;
@@ -44,7 +45,7 @@ class _PageViewRecipeListState extends State<PageViewRecipeList> {
           case 2:
            Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => TabsScreen()),);
+                    MaterialPageRoute(builder: (context) => WorkoutChallengePage()),);
             break;
           // Add more cases for additional screens
         }
@@ -52,7 +53,7 @@ class _PageViewRecipeListState extends State<PageViewRecipeList> {
               child: RecipeCard(
                 active: active,
                 index: index,
-                recipe: recipes[index],
+                fitness: fitnesses[index],
               ),
             ),
           );

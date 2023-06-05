@@ -1,3 +1,5 @@
+import 'package:fitness_app/widgets/bottom_navigation_bar.dart';
+import 'package:fitness_app/widgets/popular_recipe_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 // import 'package:recipesapp/components/my_bottom_navigation_bar.dart';
@@ -15,8 +17,18 @@ class _HomeSreenState extends State<HomeSreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 31, 32, 33),
-      body: SafeArea(
+     body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color.fromARGB(255, 46, 150, 240),
+              Color.fromARGB(255, 28, 60, 92),
+            ],
+          ),
+        ),
+      child: SafeArea(
         child: ListView(
           primary: true,
           children: [
@@ -33,7 +45,7 @@ class _HomeSreenState extends State<HomeSreen> {
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.w600,
-                      color: Color.fromARGB(255, 242, 242, 245),
+                      color: Color.fromARGB(255, 238, 239, 241),
                     ),
                   ),
                   SizedBox(
@@ -73,11 +85,13 @@ class _HomeSreenState extends State<HomeSreen> {
             const SizedBox(
               height: 16,
             ),
-           // const PopularRecipeList(),
+           const PopularRecipeList(),
           ],
         ),
       ),
-     // bottomNavigationBar: const MyBottomNavigationBar(),
+        ),   
+         bottomNavigationBar: const MyBottomNavigationBar(),
     );
   }
+
 }

@@ -1,96 +1,96 @@
 import 'package:flutter/material.dart';
 
-class Recipe {
-  Recipe(
-      {this.recipeName = '',
-      this.recipeImage = '',
-      this.recipeMaker = '',
+class Fitness {
+  Fitness(
+      {this.fitnessName = '',
+      this.fitnessImage = '',
+      this.fitnessMaker = '',
       this.startColor,
       this.endColor});
 
-  String recipeName;
-  String recipeImage;
-  String recipeMaker;
+  String fitnessName;
+  String fitnessImage;
+  String fitnessMaker;
   Color? startColor;
   Color? endColor;
 }
 
-var recipes = [
-  Recipe(
-    recipeName: 'Vegan Apricot Tart',
-    recipeImage: 'img-vegan-apricot-tart.jpeg',
-    recipeMaker: 'Foodie Yuki',
-    startColor: const Color(0xFFF37552),
-    endColor: const Color(0xFFF58B5A),
+var fitnesses = [
+  Fitness(
+    fitnessName: 'Virtual Trainer',
+    fitnessImage: 'workouttutorial.png',
+    fitnessMaker: 'Foodie Yuki',
+    startColor: Color.fromARGB(255, 28, 60, 92),
+    endColor: Color.fromARGB(255, 28, 60, 92),
   ),
-  Recipe(
-    recipeName: 'Chorizo & mozzarella gnocchi bake',
-    recipeImage: 'img-gnocchi.webp',
-    recipeMaker: 'Marianne Turner',
-    startColor: const Color(0xFF621e14),
-    endColor: const Color(0xFFd13b10),
+  Fitness(
+    fitnessName: 'Track Progress',
+    fitnessImage: 'workoutlogging.jpg',
+    fitnessMaker: 'Marianne Turner',
+     startColor: const Color.fromARGB(248, 50, 76, 108),
+    endColor: const Color.fromARGB(255, 34, 66, 92),
   ),
-  Recipe(
-    recipeName: 'Easy butter chicken',
-    recipeImage: 'img-butter-chicken.webp',
-    recipeMaker: 'Jennifer Joyce',
-    startColor: const Color(0xFFe18b41),
-    endColor: const Color(0xFFc7c73d),
+ Fitness(
+   fitnessName: 'Workout Challenge',
+    fitnessImage: 'workoutchallenge.jpg',
+    fitnessMaker: 'Jennifer Joyce',
+        startColor: const Color.fromARGB(248, 50, 76, 108),
+    endColor: const Color.fromARGB(255, 34, 66, 92),
   ),
-  Recipe(
-    recipeName: 'Easy classic lasagne',
-    recipeImage: 'img-classic-lasange.webp',
-    recipeMaker: 'Angela Boggiano',
-    startColor: const Color(0xFFaf781d),
-    endColor: const Color(0xFFd6a651),
+ Fitness(
+    fitnessName: 'Easy classic lasagne',
+    fitnessImage: 'img-classic-lasange.webp',
+   fitnessMaker: 'Angela Boggiano',
+       startColor: const Color.fromARGB(248, 50, 76, 108),
+    endColor: const Color.fromARGB(255, 34, 66, 92),
   ),
-  Recipe(
-    recipeName: 'Easy teriyaki chicken',
-    recipeImage: 'img-easy-teriyaki.webp',
-    recipeMaker: 'Esther Clark',
-    startColor: const Color(0xFF9a9d9a),
-    endColor: const Color(0xFFb9b2b5),
+  Fitness(
+    fitnessName: 'Easy teriyaki chicken',
+    fitnessImage: 'img-easy-teriyaki.webp',
+    fitnessMaker: 'Esther Clark',
+        startColor: const Color.fromARGB(248, 50, 76, 108),
+    endColor: const Color.fromARGB(255, 34, 66, 92),
   ),
-  Recipe(
-    recipeName: 'Easy chocolate fudge cake',
-    recipeImage: 'img-chocolate-fudge-cake.webp',
-    recipeMaker: 'Member recipe by misskay',
-    startColor: const Color(0xFF2e0f07),
-    endColor: const Color(0xFF653424),
+  Fitness(
+    fitnessName: 'Easy chocolate fudge cake',
+    fitnessImage: 'img-chocolate-fudge-cake.webp',
+    fitnessMaker: 'Member recipe by misskay',
+       startColor: const Color.fromARGB(248, 50, 76, 108),
+    endColor: const Color.fromARGB(255, 34, 66, 92),
   ),
-  Recipe(
-    recipeName: 'One-pan spaghetti with nduja, fennel & olives',
-    recipeImage: 'img-one-pan-spaghetti.webp',
-    recipeMaker: 'Cassie Best',
-    startColor: const Color(0xFF8b1d07),
-    endColor: const Color(0xFFee882d),
+  Fitness(
+    fitnessName: 'One-pan spaghetti with nduja, fennel & olives',
+    fitnessImage: 'img-one-pan-spaghetti.webp',
+    fitnessMaker: 'Cassie Best',
+       startColor: const Color.fromARGB(248, 50, 76, 108),
+    endColor: const Color.fromARGB(255, 34, 66, 92),
   ),
-  Recipe(
-    recipeName: 'Easy pancakes',
-    recipeImage: 'img-easy-pancake.webp',
-    recipeMaker: 'Cassie Best',
-    startColor: const Color(0xFFa1783c),
-    endColor: const Color(0xFFf3dc37),
+  Fitness(
+    fitnessName: 'Easy pancakes',
+    fitnessImage: 'img-easy-pancake.webp',
+    fitnessMaker: 'Cassie Best',
+       startColor: const Color.fromARGB(248, 50, 76, 108),
+    endColor: const Color.fromARGB(255, 34, 66, 92),
   ),
-  Recipe(
-    recipeName: 'Easy chicken fajitas',
-    recipeImage: 'img-chicken-fajitas.webp',
-    recipeMaker: 'Steven Morris',
-    startColor: const Color(0xFF3e4824),
-    endColor: const Color(0xFF5da6a6),
+  Fitness(
+    fitnessName: 'Easy chicken fajitas',
+    fitnessImage: 'img-chicken-fajitas.webp',
+    fitnessMaker: 'Steven Morris',
+     startColor: const Color.fromARGB(248, 50, 76, 108),
+    endColor: const Color.fromARGB(255, 34, 66, 92),
   ),
-  Recipe(
-    recipeName: 'Easy vegetable lasagne',
-    recipeImage: 'img-easy-vegetable-lasagne.webp',
-    recipeMaker: 'Emma Lewis',
-    startColor: const Color(0xFF914322),
-    endColor: const Color(0xFFbf802f),
+ Fitness(
+    fitnessName: 'Easy vegetable lasagne',
+    fitnessImage: 'img-easy-vegetable-lasagne.webp',
+    fitnessMaker: 'Emma Lewis',
+     startColor: const Color.fromARGB(248, 50, 76, 108),
+    endColor: const Color.fromARGB(255, 34, 66, 92),
   ),
-  Recipe(
-    recipeName: 'Thai fried prawn & pineapple rice',
-    recipeImage: 'img-thai-fried-prawn.webp',
-    recipeMaker: 'Good Food Team',
-    startColor: const Color(0xFF5b8e38),
-    endColor: const Color(0xFF94bf77),
+  Fitness(
+    fitnessName: 'Thai fried prawn & pineapple rice',
+    fitnessImage: 'img-thai-fried-prawn.webp',
+    fitnessMaker: 'Good Food Team',
+        startColor: const Color.fromARGB(248, 50, 76, 108),
+    endColor: const Color.fromARGB(255, 34, 66, 92),
   ),
 ];
