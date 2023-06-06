@@ -1,5 +1,5 @@
 import 'package:fitness_app/screens/homepage.dart';
-import 'package:fitness_app/screens/tabs.dart';
+
 import 'package:flutter/material.dart';
 
 import 'dart:async';

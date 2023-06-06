@@ -96,7 +96,7 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
           ),
           ),
           centerTitle: true,
-          backgroundColor: const Color.fromARGB(255, 24, 24, 25),
+          backgroundColor:const Color.fromARGB(255, 46, 150, 240),
         elevation: 4.0,
        
              // AnimatedAppBarTitle(),
@@ -104,11 +104,23 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
       drawer: MainDrawer(
         onSelectScreen: _setScreen,
       ),
-      body: activePage,
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+             Color.fromARGB(255, 46, 150, 240),
+              Color.fromARGB(255, 28, 60, 92),
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+        child: activePage,
+      ),
       bottomNavigationBar:  BottomNavigationBar(
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon(Icons.set_meal),
+          icon: Icon(Icons.fitness_center),
           label: 'Categories',
         ),
         BottomNavigationBarItem(
@@ -124,7 +136,7 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
       currentIndex: _selectedPageIndex,
       selectedItemColor: const Color(0xFFF6925C),
       onTap: _selectPage,
-      backgroundColor: Colors.transparent,
+      backgroundColor: const Color.fromARGB(255, 28, 60, 92),
       elevation: 0,
       showSelectedLabels: false,
       showUnselectedLabels: false,

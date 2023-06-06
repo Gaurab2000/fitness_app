@@ -64,7 +64,7 @@ class _PopularRecipeListState extends State<PopularRecipeList> {
                               ),
                             ),
                             Text(
-                              '${fitnesses[index].fitnessMaker}\'s recipe',
+                              fitnesses[index].fitnessMaker,
                               overflow: TextOverflow.ellipsis,
                               maxLines: 1,
                               style: const TextStyle(
