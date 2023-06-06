@@ -67,16 +67,16 @@ class _HomeSreenState extends State<HomeSreen> {
                 horizontal: 32,
               ),
               child: Row(
-                children: [
-                  SvgPicture.asset('assets/svg/icon-popular.svg'),
-                  const SizedBox(
+                children: const [
+                  Icon(Icons.favorite_outline),
+                  SizedBox(
                     width: 4.26,
                   ),
-                  const Text(
+                  Text(
                     'Popular',
                     style: TextStyle(
                       fontSize: 20,
-                      color: Color(0xffF9AE89),
+                      color: Color.fromARGB(255, 240, 241, 244),
                     ),
                   )
                 ],

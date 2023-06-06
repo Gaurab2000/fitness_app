@@ -4,6 +4,8 @@ import 'package:fitness_app/models/category.dart';
 import 'package:fitness_app/data/dummy_data.dart';
 import 'package:fitness_app/widgets/category_grid_item.dart';
 import 'package:fitness_app/screens/workouts.dart';
+
+
 class CategoriesScreen extends StatefulWidget {
   const CategoriesScreen({super.key,required this.availableWorkouts,});
 
@@ -54,7 +56,7 @@ void _selectCategory(BuildContext context, Category category,) {
     child:GridView(
         padding: const EdgeInsets.all(24),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
+          crossAxisCount: 1,
           childAspectRatio: 3 / 2,
           crossAxisSpacing: 20,
           mainAxisSpacing: 20,
@@ -66,6 +68,7 @@ void _selectCategory(BuildContext context, Category category,) {
             onSelectCategory: (){
               _selectCategory(context,category);
             },
+           
               
             )
         ],

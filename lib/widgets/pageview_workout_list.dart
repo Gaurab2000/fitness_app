@@ -35,12 +35,12 @@ class _PageViewRecipeListState extends State<PageViewRecipeList> {
           case 0:
             Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => TabsScreen()),);
+                    MaterialPageRoute(builder: (context) => const TabsScreen()),);
             break;
           case 1:
        Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => TabsScreen()),);
+                    MaterialPageRoute(builder: (context) => const TabsScreen()),);
             break;
           case 2:
            Navigator.push(

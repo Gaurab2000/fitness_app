@@ -63,7 +63,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
         ),
       ],
       currentIndex: _selectedIndex,
-      selectedItemColor: const Color(0xFFF6925C),
+      selectedItemColor: const Color.fromARGB(255, 249, 239, 234),
       onTap: _onItemTapped,
       backgroundColor:  Color.fromARGB(255, 28, 60, 92),
       elevation: 0,
