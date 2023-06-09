@@ -30,7 +30,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: theme,
-      home:  SplashScreen(),
+      home:  SplashScreen(),//proceeds to splash screen 
     );
   }
 }
