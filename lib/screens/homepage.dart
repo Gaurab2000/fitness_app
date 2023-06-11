@@ -5,7 +5,7 @@ import 'package:flutter_svg/svg.dart';
 // import 'package:recipesapp/components/my_bottom_navigation_bar.dart';
  import 'package:fitness_app/widgets/pageview_workout_list.dart';
 // import 'package:recipesapp/components/popular_recipe_list.dart';
-
+import 'package:fitness_app/widgets/dashboard_stat.dart';
 class HomeSreen extends StatefulWidget {
   const HomeSreen({Key? key}) : super(key: key);
 
@@ -24,50 +24,51 @@ class _HomeSreenState extends State<HomeSreen> {
             end: Alignment.bottomCenter,
             colors: [
               Color.fromARGB(255, 46, 150, 240),
-              Color.fromARGB(255, 28, 60, 92),
+              Color.fromARGB(255, 228, 231, 235),
             ],
           ),
         ),
       child: SafeArea(
         child: ListView(
           primary: true,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 32.5,
-                vertical: 16,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    'Fit Flex',
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w600,
-                      color: Color.fromARGB(255, 238, 239, 241),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 36,
-                    child: SvgPicture.asset('assets/svg/icon-nav.svg'),
-                  )
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 16.53,
-            ),
-            const PageViewRecipeList(),
-            const SizedBox(
+          children: const [
+            // Padding(
+            //   padding: EdgeInsets.symmetric(
+            //     horizontal: 32.5,
+            //     vertical: 1,
+            //   ),
+            //   // child: Row(
+            //   //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //   //   children: [
+            //   //     const Text(
+            //   //       'Fit Flex',
+            //   //       style: TextStyle(
+            //   //         fontSize: 30,
+            //   //         fontWeight: FontWeight.w600,
+            //   //         color: Color.fromARGB(255, 238, 239, 241),
+            //   //       ),
+            //   //     ),
+            //   //     SizedBox(
+            //   //       height: 36,
+            //   //       child: SvgPicture.asset('assets/svg/icon-nav.svg'),
+            //   //     )
+            //   //   ],
+            //   // ),
+            // ),
+            // SizedBox(
+            //   height: 16.53,
+            // ),
+            DashboardStat(),
+            PageViewRecipeList(),
+            SizedBox(
               height: 42.52,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(
+              padding: EdgeInsets.symmetric(
                 horizontal: 32,
               ),
               child: Row(
-                children: const [
+                children: [
                   Icon(Icons.favorite_outline),
                   SizedBox(
                     width: 4.26,
@@ -82,10 +83,10 @@ class _HomeSreenState extends State<HomeSreen> {
                 ],
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 16,
             ),
-           const PopularRecipeList(),
+           PopularRecipeList(),
           ],
         ),
       ),
