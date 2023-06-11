@@ -69,7 +69,7 @@ class _PopularRecipeListState extends State<PopularRecipeList> {
                               maxLines: 1,
                               style: const TextStyle(
                                 fontSize: 14,
-                                color: Color(0xFF9A9DB0),
+                                color: Color.fromARGB(255, 0, 0, 1),
                               ),
                             )
                           ],
